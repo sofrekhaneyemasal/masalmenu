@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>سفره‌خانه ماسال</title>
+  <style>
+    body {
+      font-family: Tahoma, sans-serif;
+      background: #fdf6ec;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    header {
+      background: #8b0000;
+      color: #fff;
+      padding: 20px;
+      font-size: 24px;
+      font-weight: bold;
+      border-bottom: 5px solid #d4a373;
+    }
+
+    .menu {
+      max-width: 500px;
+      margin: 30px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 15px 0;
+      font-size: 18px;
+    }
+
+    .controls {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    button {
+      background: #8b0000;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 5px 10px;
+      font-size: 18px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #d40000;
+    }
+
+    .count {
+      min-width: 30px;
+      text-align: center;
+      font-weight: bold;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    به سایت سفره‌خانه ماسال خوش آمدید
+  </header>
+
+  <div class="menu">
+    <div class="item">
+      <span>چلو کباب</span>
+      <div class="controls">
+        <button onclick="decrease(this)">-</button>
+        <span class="count">0</span>
+        <button onclick="increase(this)">+</button>
+      </div>
+    </div>
+
+    <div class="item">
+      <span>چلو جوجه</span>
+      <div class="controls">
+        <button onclick="decrease(this)">-</button>
+        <span class="count">0</span>
+        <button onclick="increase(this)">+</button>
+      </div>
+    </div>
+
+    <div class="item">
+      <span>بال و کتف</span>
+      <div class="controls">
+        <button onclick="decrease(this)">-</button>
+        <span class="count">0</span>
+        <button onclick="increase(this)">+</button>
+      </div>
+    </div>
+
+    <div class="item">
+      <span>املت</span>
+      <div class="controls">
+        <button onclick="decrease(this)">-</button>
+        <span class="count">0</span>
+        <button onclick="increase(this)">+</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function increase(btn) {
+      const count = btn.parentElement.querySelector(".count");
+      count.textContent = parseInt(count.textContent) + 1;
+    }
+
+    function decrease(btn) {
+      const count = btn.parentElement.querySelector(".count");
+      let value = parseInt(count.textContent);
+      if (value > 0) {
+        count.textContent = value - 1;
+      }
+    }
+  </script>
+</body>
+</html>
